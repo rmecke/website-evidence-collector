@@ -24,6 +24,9 @@
 * feature: improve markdown to html conversion in the default HTML template and custom HTML templates (involves marked-smartypants, marked-custom-heading-id)
 * dependency: update amongst other tough-cookie lib
 
+* add: command line parameter `ignore-https-errors`, to ignore https certificate errors while browsing
+* add: command line parameter `login-timeout`, to pause the tool waiting for the user to login to the loaded website
+
 ## 2.0.0 / 2022-06-30
 
 * fix: use for Docker Alpine v3.15.0 and exclude output directory in `.dockerignore`

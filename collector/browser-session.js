@@ -43,6 +43,7 @@ async function createBrowserSession(browser_args, browser_logger) {
       : args.output
       ? path.join(args.output, "browser-profile")
       : undefined,
+    ignoreHTTPSErrors: args.ignoreHttpsErrors,
     args: [
       `--user-agent=${UserAgent}`,
       `--window-size=${WindowSize.width},${WindowSize.height}`,
@@ -156,6 +157,10 @@ async function createBrowserSession(browser_args, browser_logger) {
         });
 
         await page.waitForNetworkIdle();
+
+        console.log(`Please login now. You have ${args.loginTimeout} ms until the tool proceeds...`);
+        await page.waitForTimeout(args.loginTimeout);
+        console.log("Proceeding...");
 
         if (page_response === null) {
           // see: https://github.com/puppeteer/puppeteer/issues/2479#issuecomment-408263504

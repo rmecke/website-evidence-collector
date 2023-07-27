@@ -147,6 +147,19 @@ The following software extends WEC to cover further use cases. It is developed i
 - Company Avast <https://www.avast.com> (store page source code in output folder [#68](https://github.com/EU-EDPS/website-evidence-collector/pull/68))
 - Per Ploug (Zalando) <https://opensource.zalando.com/> (refactor code base for modularity)
 
+
+## Some examples to call with websites according to the "Secured Smart Home"-Project
+
+```website-evidence-collector https://secured-smart-home.de:54000 -l https://secured-smart-home.de:54000/room/my-room -l https://secured-smart-home.de:54000/users -l https://secured-smart-home de:54000/logout --quiet --headless false -o output/webservice --login-timeout 15000```
+
+```website-evidence-collector https://192.168.2.120:8081/ -l https://192.168.2.120:8081/#tab-intro -l https://192.168.2.120:8081/#tab-adapters -l https://192.168.2.120:8081/#tab-instances -l https://192.168.2.120:8081/#tab-objects -l https://192.168.2.120:8081/#tab-enums -l https://192.168.2.120:8081/#tab-logs -l https://192.168.2.120:8081/#tab-users -l https://192.168.2.120:8081/#tab-hosts -l https://192.168.2.120:8081/#tab-files -l https://192.168.2.120:8081/#tab-backitup-0 -l https://192.168.2.120:8081/#tab-javascript --quiet --headless false -o output/iobroker --ignore-https-errors --login-timeout 15000```
+
+```website-evidence-collector https://192.168.2.120:8081/ -l https://192.168.2.120:8081/#tab-intro --quiet --headless false -o output/iobroker --ignore-https-errors --login-timeout 15000```
+
+```website-evidence-collector https://192.168.2.120:8082/vis/index.html -l https://192.168.2.120:8082/vis/index.html#DemoView --quiet --headless false -o output/user-c --ignore-https-errors --login-timeout 15000```
+
+```website-evidence-collector https://iobroker.net/ -l https://iobroker.net/vis/index.html#DemoView --quiet --headless false -o output/cloud-c --ignore-https-errors --login-timeout 15000```
+
 ## License
 
 This work, excluding filter lists, is distributed under the European Union Public Licence (the ‘EUPL’). Please find the terms in the file [LICENSE.txt](./LICENSE.txt).
